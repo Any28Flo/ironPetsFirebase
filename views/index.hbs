@@ -1,12 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Hello from index view</h2>
-</body>
-</html>
+{{!< layout}}
+<form action="addPet" method="post">
+   
+
+    <div class="field">
+        <label class="label">Name:</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" type="text"  name="petName">
+            <span class="icon is-small is-left">
+            <i class="fas fa-paw"></i>
+            </span>
+            <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+    <label class="label">Specie</label>
+    <div class="field">
+        <p class="control has-icons-left">
+            <span class="select">
+            <select>
+                <option selected>Specie</option>
+                <option>Cat</option>
+                <option>Dog</option>
+                <option>Other</option>
+            </select>
+            </span>
+            <span class="icon is-small is-left">
+            <i class="fas fa-dog"></i>
+            </span>
+        </p>
+    </div>
+    </div>
+    <div class="field">
+        <label class="label">Age</label>
+        <div class="control">
+            <label class="radio">
+                <input type="radio" name="answer">
+                Adulto - De 3 a 6 años
+            </label>
+            <label class="radio">
+                <input type="radio" name="answer">
+                Cachorro - De 0 a 1.5 años
+            </label>
+             <label class="radio">
+                <input type="radio" name="answer">
+                Joven - De 1.5 a 3 años
+            </label>
+            <label class="radio">
+                <input type="radio" name="answer">
+                Veterano - De 6 años en adelante
+            </label>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Age:</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" type="number"  name="petAge">
+            <span class="icon is-small is-left">
+            <i class="fas fa-paw"></i>
+            </span>
+            <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+            </span>
+        </div>
+    </div>
+     <div class="field">
+        <label class="label">Size:</label>
+        <div class="control">
+            <label class="radio">
+                <input type="radio" name="answer">
+                Extra Grande - Más de 45 Kg.
+            </label>
+            <label class="radio">
+                <input type="radio" name="answer">
+                Grande - De 22 Kg. a 45 Kg.
+            </label>
+             <label class="radio">
+                <input type="radio" name="answer">
+                Mediano - De 11 Kg. a 22 Kg.
+            </label>
+            <label class="radio">
+                <input type="radio" name="answer">
+                 Pequeño - De 5 Kg. a 11kg.
+            </label>
+            <label class="radio">
+                <input type="radio" name="answer">
+                 Muy pequeño - Hasta 5 Kg.
+            </label>
+        </div>
+    </div>
+    <div class="field">
+    <label class="label">Esterilizado</label>
+    <div class="field">
+        <p class="control has-icons-left">
+            <span class="select">
+            <select>
+                <option selected>Esterilizado</option>
+                <option>Si</option>
+                <option>No</option>
+            </select>
+            </span>
+            <span class="icon is-small is-left">
+            <i class="fas fa-dog"></i>
+            </span>
+        </p>
+    </div>
+    </div>
+
+
+
+    <div class="field">
+    <div class="control">
+        <label class="checkbox">
+        <input type="checkbox">
+        I agree to the <a href="#">terms and conditions</a>
+        </label>
+    </div>
+    </div>
+
+    <div class="field is-grouped">
+    <div class="control">
+        <button class="button is-link">Submit</button>
+    </div>
+    <div class="control">
+        <button class="button is-link is-light">Cancel</button>
+    </div>
+    </div>
+</form>

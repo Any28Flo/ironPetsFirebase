@@ -5,4 +5,5 @@ router.get('/' , (req,res) =>{
     res.render('index');
 });
 
+router.get('pet')
 module.exports = router;

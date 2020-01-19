@@ -6,7 +6,10 @@ const path = require('path');
 const app = express();
 
 const index = require('./routes/index');
+
 app.set('views', path.join(__dirname, 'views'));
+
+//View engine setup 
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
