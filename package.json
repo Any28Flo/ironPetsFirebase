@@ -1,0 +1,30 @@
+{
+  "name": "ironpetsfirebase",
+  "version": "1.0.0",
+  "description": "Second proyect for ironhack bootcamp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Any28Flo/ironPetsFirebase.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "firebase",
+    "javascript"
+  ],
+  "author": "Analin Flores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Any28Flo/ironPetsFirebase/issues"
+  },
+  "homepage": "https://github.com/Any28Flo/ironPetsFirebase#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
