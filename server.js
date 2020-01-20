@@ -27,11 +27,17 @@ const firebaseConfig = {
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-var database = firebase.database();
+//var database = firebase.database();
 
 const index = require('./routes/index');
+const admin= require('firebase-admin');
+const serviceAccount = require('./ServiceAccountKey.json');
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount);
 
+})
 app.set('views', path.join(__dirname, 'views'));
+const db=admin.firestone();
 
 //Middeleware Setup
 app.use(bodyParser.json());
