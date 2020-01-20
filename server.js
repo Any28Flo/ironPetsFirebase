@@ -1,41 +1,47 @@
 require('dotenv').config();
+const bodyParser   = require('body-parser');
+const express      = require('express');
+const hbs          = require('hbs');
+const path         = require('path');
+const app          = express();
+// Browserify Setup
+const firebase = require('firebase/app');
 
-const express = require('express');
-const hbs = require('hbs');
-const path = require('path');
-const app = express();
 // Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-const firebase = require("firebase/app");
 
 // Add the Firebase products that you want to use
+require('firebase/database');
 require("firebase/auth");
 require("firebase/firestore");
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCzLmeFsDPH7IQ1gCHoMVtgGYiPSiGSx18",
-    authDomain: "ironpets-ffc95.firebaseapp.com",
+    apiKey: process.env.APIKEY,
+    authDomain: process.env.AUTHDOMAIN,
     databaseURL: "https://ironpets-ffc95.firebaseio.com",
     projectId: "ironpets-ffc95",
     storageBucket: "ironpets-ffc95.appspot.com",
     messagingSenderId: "664017099282",
-    appId: "1:664017099282:web:ee84157fbd80f8077416cb",
+    appId: process.env.APIID,
     measurementId: "G-HNV016DLTG"
 };
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const database = firabese.database();
-  
+var database = firebase.database();
+
 const index = require('./routes/index');
 
 app.set('views', path.join(__dirname, 'views'));
+
+//Middeleware Setup
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //View engine setup 
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', index);
+app.use('/', index);
 
 app.listen(process.env.PORT,()=>{
     console.log("Server is ready");

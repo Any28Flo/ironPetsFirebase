@@ -1,5 +1,5 @@
 {{!< layout}}
-<form action="/getPetData" method="post">
+<form action="/petsInfo" method="post">
    
 
     <div class="field">
@@ -9,9 +9,7 @@
             <span class="icon is-small is-left">
             <i class="fas fa-paw"></i>
             </span>
-            <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-            </span>
+           
         </div>
     </div>
 
@@ -22,9 +20,9 @@
             <span class="select">
             <select>
                 <option selected>Specie</option>
-                <option>Cat</option>
-                <option>Dog</option>
-                <option>Other</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+                <option value ="Other">Other</option>
             </select>
             </span>
             <span class="icon is-small is-left">
@@ -37,20 +35,20 @@
         <label class="label">Age</label>
         <div class="control">
             <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Adulto - De 3 a 6 años">
                 Adulto - De 3 a 6 años
             </label>
             <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Cachorro - De 0 a 1.5 años">
                 Cachorro - De 0 a 1.5 años
             </label>
              <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Joven - De 1.5 a 3 años">
                 Joven - De 1.5 a 3 años
             </label>
             <label class="radio">
-                <input type="radio" name="answer">
-                Veterano - De 6 años en adelante
+                <input type="radio" name="Joven - De 1.5 a 3 años">
+                Joven - De 1.5 a 3 años
             </label>
         </div>
     </div>
@@ -62,32 +60,29 @@
             <span class="icon is-small is-left">
             <i class="fas fa-paw"></i>
             </span>
-            <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-            </span>
         </div>
     </div>
      <div class="field">
         <label class="label">Size:</label>
         <div class="control">
             <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Extra Grande - Más de 45 Kg.">
                 Extra Grande - Más de 45 Kg.
             </label>
             <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Grande - De 22 Kg. a 45 Kg.">
                 Grande - De 22 Kg. a 45 Kg.
             </label>
              <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Mediano - De 11 Kg. a 22 Kg.">
                 Mediano - De 11 Kg. a 22 Kg.
             </label>
             <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name=" Pequeño - De 5 Kg. a 11kg.">
                  Pequeño - De 5 Kg. a 11kg.
             </label>
             <label class="radio">
-                <input type="radio" name="answer">
+                <input type="radio" name="Muy pequeño - Hasta 5 Kg.">
                  Muy pequeño - Hasta 5 Kg.
             </label>
         </div>
@@ -99,25 +94,14 @@
             <span class="select">
             <select>
                 <option selected>Esterilizado</option>
-                <option>Si</option>
-                <option>No</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option value="No">
             </select>
             </span>
             <span class="icon is-small is-left">
             <i class="fas fa-dog"></i>
             </span>
         </p>
-    </div>
-    </div>
-
-
-
-    <div class="field">
-    <div class="control">
-        <label class="checkbox">
-        <input type="checkbox">
-        I agree to the <a href="#">terms and conditions</a>
-        </label>
     </div>
     </div>
 
