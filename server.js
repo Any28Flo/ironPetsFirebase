@@ -30,14 +30,14 @@ const firebaseConfig = {
 //var database = firebase.database();
 
 const index = require('./routes/index');
-const admin= require('firebase-admin');
-const serviceAccount = require('./ServiceAccountKey.json');
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount);
+//const admin= require('firebase-admin');
+//const serviceAccount = require('./ServiceAccountKey.json');
+/* admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
 
-})
+}) */
 app.set('views', path.join(__dirname, 'views'));
-const db=admin.firestone();
+//const db=admin.firestone();
 
 //Middeleware Setup
 app.use(bodyParser.json());
@@ -49,6 +49,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 
+app.get('/petForm' , (req,res) =>{
+    console.log("Hello");
+    res.render("petForm")
+})
+app.post('/petsInfo' , (req, res) =>{
+   console.log(req.body);
+   registerPet(req.body);
+    //res.render("index")
+    
+})
+app.get('/' , (req,res) =>{
+    console.log(req.body);
+   //res.render('index');
+});
+
+const registerPet = (data)=>{
+    const key = firebase.database().ref().child('pet').push().key;
+    const pet = {
+        id: key,
+        name: data.petName,
+        specie : data.specie,
+        age : data.age,
+        size: data.size,
+        sterilized : data.sterilized
+    };
+    firebase
+      .database()
+      .ref(`pet/${key}`)
+      .set(pet);
+  }
 app.listen(process.env.PORT,()=>{
     console.log("Server is ready");
 })
